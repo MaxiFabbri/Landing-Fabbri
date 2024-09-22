@@ -1,18 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Button, Navbar} from './components/navbar.jsx';
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import Navbar from './components/navbar.jsx';
+import CardContainer from './components/card-container.jsx';
+import Footer from './components/footer.jsx';
 
 
 function App() {
-  const handleClick = () => {
-    console.log("Hola estoy haciendo Click!!")
-  }
   return(
-    <div>
-      <Button texto="Click Aquí!!!" color={'#9999ff'} width={'200px'} height={'60px'} click={handleClick} />
-    </div>
+  <>
+    <Navbar navbarElements={['Products','Prices','About us','Contact']} width='120px' />
+    <h1>Global Merchandising</h1>
+    <CardContainer/>
+    <Footer footerElements={['Domicilio Av. J. D. Peron 7201','Tel.: 11 3232-4545','About us Contact']} />
+
+  </> 
   )
 }
 export default App

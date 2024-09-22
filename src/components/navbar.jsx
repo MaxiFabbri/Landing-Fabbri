@@ -1,15 +1,17 @@
-export const Button = (props) =>{
-    console.log(props)
-    
-    return (
-        <button onClick={props.click} style={{backgroundColor: props.color , width: props.width, height: props.height}}>{props.texto}</button>
-    )
+function NavItem (props) {
+    return <li style={{width: props.width}}> { props.item }</li>;
 }
 
-export const Navbar = () => {
-
-    return<></>
-
+export default function Navbar (props) {
+    const items = [...props.navbarElements]
+    return<>
+        <div className="sticky">
+            <ul className="navbar-container">
+                <li style={{width:props.width}}>LOGO</li>
+                {items.map((el)=> <NavItem item={el} width={props.width}/>)}
+            </ul>
+        </div>    
+    </> 
 }
 
 
